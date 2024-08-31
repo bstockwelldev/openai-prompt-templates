@@ -1,0 +1,5 @@
+chat_history:
+  - role: "user"
+    content: "How can we develop a board game?"
+  - role: "assistant"
+    content: "Let's start by discussing the core concept."

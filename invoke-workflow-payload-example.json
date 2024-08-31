@@ -1,0 +1,14 @@
+{
+    "template_name": "example_template",
+    "variables": {
+        "system_message": "You are an AI assistant.",
+        "tone": "Collaborative",
+        "goal": "Design a new board game.",
+        "audience": "Experienced game designers",
+        "steps": [
+            "Conceptualization",
+            "Mechanics Development",
+            "Prototyping"
+        ]
+    }
+}

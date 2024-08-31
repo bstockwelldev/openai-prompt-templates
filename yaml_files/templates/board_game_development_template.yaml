@@ -1,0 +1,25 @@
+template_name: "Board Game Development Workflow"
+template_content: |
+  System Message:
+  {system_message}
+
+  Tone:
+  {tone}
+
+  Goal:
+  {goal}
+
+  Audience:
+  {audience}
+
+  Steps:
+  - Conceptualization and Initial Feedback: {conceptualization_feedback}
+  - Game Mechanics and Rules Development: {mechanics_development}
+  - Component Design and Prototyping: {component_design}
+  - Playtesting and Iteration: {playtesting_iteration}
+  - Advanced Rules and Scenarios Development: {advanced_rules_scenarios}
+  - Finalizing the Rulebook: {finalizing_rulebook}
+  - Documentation of Cards and Abilities: {documentation_cards_abilities}
+  - Final Review and Production Preparation: {final_review_production}
+  - Gameplay Examples: {gameplay_examples}
+  - User Input: {user_input}

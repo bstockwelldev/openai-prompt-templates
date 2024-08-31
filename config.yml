@@ -1,0 +1,3 @@
+templates_dir: "./yaml_files/templates"
+variables_dir: "./yaml_files/variables"
+chat_history_dir: "./yaml_files/chat_history"

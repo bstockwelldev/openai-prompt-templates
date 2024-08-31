@@ -1,0 +1,16 @@
+template_name: "Example Template"
+template_content: |
+  System Message:
+  {system_message}
+
+  Tone:
+  {tone}
+
+  Goal:
+  {goal}
+
+  Audience:
+  {audience}
+
+  Steps:
+  {steps}
