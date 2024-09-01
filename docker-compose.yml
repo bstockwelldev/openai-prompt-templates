@@ -1,10 +1,15 @@
-version: '3'
 services:
-  app:
-    build: .
+  web:
+    build: ./frontend
     ports:
       - "5000:5000"
-    volumes:
-      - .:/app
+    depends_on:
+      - api
+    environment:
+      - FLASK_API_BASE_URL=http://backend:3000
+  api:
+    build: ./backend
+    ports:
+      - "3000:3000"
     environment:
       - FLASK_ENV=development

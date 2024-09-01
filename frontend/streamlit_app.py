@@ -1,25 +1,13 @@
 import streamlit as st
 import requests
+import os
 import json
-from skills.api_integration import call_openai_api
 
 # Function to invoke the selected LLM
 def invoke_llm(prompt, llm_provider, model, api_key):
     headers = {"Authorization": f"Bearer {api_key}"}
     
-    if llm_provider == "OpenAI":
-        response = call_openai_api(prompt)
-        return response.choices[0].text
-    elif llm_provider == "Groq":
-        # Implement Groq call via OpenAI library
-        response = call_openai_api(prompt)  # Update this to call the Groq model
-        return response.choices[0].text
-    elif llm_provider == "Anthropic Claude":
-        # Implement Anthropic Claude call via OpenAI library
-        response = call_openai_api(prompt)  # Update this to call the Claude model
-        return response.choices[0].text
-    else:
-        return "Unsupported LLM provider."
+    return requests.post(f"{os.environ.get("FLASK_API_BASE_URL")}/invoke_workflow")
 
 # Sidebar for LLM configuration
 st.sidebar.title("LLM Configuration")

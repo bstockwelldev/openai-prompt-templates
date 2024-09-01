@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3.10-slim
+FROM python:3.10-slim AS builder
 
 # Set the working directory
 WORKDIR /app
@@ -10,12 +10,15 @@ COPY . /app
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Make port 5000 available to the world outside this container
-EXPOSE 5000
+FROM builder as flaskApi
+
+WORKDIR /root/
+
+COPY --from=builder /app .
+
+EXPOSE 8080
 
 # Define environment variable
 ENV FLASK_ENV=development
 
-# Run app.py when the container launches
 CMD ["python", "api.py"]
-CMD ["streamlit", "run", "streamlit_app.py", "--server.port=5000", "--server.enableCORS=false"]

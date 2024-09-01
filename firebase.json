@@ -1,20 +1,19 @@
 {
-    "hosting": {
-      "public": "private",
-      "ignore": [
-        "firebase.json",
-        "**/.*",
-        "**/node_modules/**"
-      ],
-      "rewrites": [
-        {
-          "source": "/api/**",
-          "run": {
-            "serviceId": "openai-prompt-workflows-gcr",
-            "region": "us-central1"
-          }
+  "hosting": {
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "run": {
+          "serviceId": "openai-prompt-workflows-gcr",
+          "region": "us-central1"
         }
-      ]
-    }
+      }
+    ]
   }
+}
   
